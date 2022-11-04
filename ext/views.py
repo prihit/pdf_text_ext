@@ -39,7 +39,7 @@ def home(request):
         print(detail_line)
         name = detail_line[0]
         vehicle = detail_line[detail_line.index('Ride Details')-1]
-        # n = len(detail_line)
+        n = len(detail_line)
         # i = 1
         # while i <n:
         #     if detail_line[i][0].isnumeric() or detail_line[i] == "NA":
@@ -47,7 +47,12 @@ def home(request):
         #     else:
         #         vehicle = detail_line[i]
         #         break
-        total_fare = detail_line[-7] +" "+ detail_line[-6]
+        for i in range(n-1,-1,-1): 
+            if detail_line[i] != "" and detail_line[i].isnumeric():
+                i4 = i
+                break
+        # print("grgeg   " + detail_line[i4])
+        total_fare = detail_line[i4-1] +" "+ detail_line[i4]
         
         i1 = -1
         i2 = -1
