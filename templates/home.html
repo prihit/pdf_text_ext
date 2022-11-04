@@ -1,0 +1,15 @@
+<h1>Ola Receipt Detail Extractor</h1>
+<form action="" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <label for="upload" style="height: 200px; font-size: 14pt;" >Upload your File here</label>
+    <input  type="file"  name="upload" accept="application/pdf"/> <br><br>
+    <button type="submit">Submit </button>
+</form>
+{% if name %}
+<h2>Details: </h2>
+<h3>Driver Name: {{ name}}</h3>
+<h3>Vehicle: {{ vehicle }}</h3>
+<h3>Total Fare: {{ total_fare }}</h3>
+<h3>Pickup: {{ source }}</h3>
+<h3>Destination: {{ destination }}</h3>
+{% endif %}
